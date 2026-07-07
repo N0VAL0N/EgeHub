@@ -3,7 +3,6 @@
     <div class="modal-content">
       <button class="modal-close" @click="close">✕</button>
       <div class="modal-body">
-        <!-- ЛЕВАЯ ЧАСТЬ -->
         <div class="modal-left">
           <h2>{{ theorem.name }}</h2>
           <div class="modal-meta">
@@ -28,30 +27,20 @@
             <code>{{ formula }}</code>
           </div>
 
-          <!-- теги убраны -->
-
           <button class="bookmark-btn" @click="toggleBookmark">
             {{ isBookmarked ? '🔖 В закладках' : '☆ Добавить в закладки' }}
           </button>
         </div>
 
-        <!-- ПРАВАЯ ЧАСТЬ -->
         <div class="modal-right">
-          <!-- Несколько изображений с индивидуальными размерами -->
-          <div v-if="imageItems.length > 1" class="multi-canvas">
-            <div v-for="(item, index) in imageItems" :key="index" class="canvas-wrapper">
-              <canvas
-                :ref="el => { canvasRefs[index] = el }"
-                :width="item.width || canvasWidth"
-                :height="item.height || canvasHeight"
-              ></canvas>
-              <p class="canvas-caption" v-if="item.caption">{{ item.caption }}</p>
-            </div>
-          </div>
-          <!-- Одно изображение -->
-          <div v-else class="canvas-wrapper">
-            <canvas ref="canvasRef" :width="canvasWidth" :height="canvasHeight"></canvas>
-          </div>
+          <img
+            v-if="imageUrl && !imageError"
+            :src="imageUrl"
+            alt="Визуализация"
+            @error="handleImageError"
+            class="visualization-image"
+          />
+          <div v-else class="no-image">Нет визуализации</div>
         </div>
       </div>
 
@@ -65,58 +54,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed, nextTick } from 'vue'
-import { useMathStore } from '../store'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useSubjectStore } from '@core/store/useSubjectStore'
 import { useBookmarks } from '@core/composables/useBookmarks'
-import { drawFigure } from '../render'
 
 const props = defineProps({
-  theorem: Object
+  theorem: Object,
+  subject: String,
+  section: String
 })
 const emit = defineEmits(['close', 'bookmark'])
 
-const mathStore = useMathStore()
+const store = useSubjectStore()
 const { toggle, isBookmarked: checkBookmark } = useBookmarks()
 
-const canvasRef = ref(null)
-const canvasRefs = ref([])
 const isBookmarked = ref(false)
+const imageError = ref(false)
 
-// ---- список изображений с размерами ----
-const imageItems = computed(() => {
-  const vis = mathStore.getVisualization(props.theorem?.id)
-  if (vis?.params?.images) {
-    return vis.params.images.map((src, index) => ({
-      src,
-      caption: vis.params.captions?.[index] || '',
-      width: vis.params.imageWidths?.[index] || 500,
-      height: vis.params.imageHeights?.[index] || 400
-    }))
-  }
-  if (vis?.params?.image) {
-    return [{
-      src: vis.params.image,
-      caption: '',
-      width: vis.params.canvasWidth || 500,
-      height: vis.params.canvasHeight || 400
-    }]
-  }
-  return []
+const imageUrl = computed(() => {
+  if (!props.theorem || !props.subject || !props.section) return null
+  return store.getImageUrl(props.subject, props.section, props.theorem.id)
 })
 
-const imageList = computed(() => imageItems.value.map(item => item.src))
-
-// ---- дефолтные размеры ----
-const canvasWidth = computed(() => {
-  const vis = mathStore.getVisualization(props.theorem?.id)
-  return vis?.params?.canvasWidth || 500
-})
-const canvasHeight = computed(() => {
-  const vis = mathStore.getVisualization(props.theorem?.id)
-  return vis?.params?.canvasHeight || 400
-})
-
-// ---- остальные computed ----
 const formula = computed(() => {
   const desc = props.theorem?.description || ''
   const match = desc.match(/[A-Za-z]+\s*=\s*.+/)
@@ -128,75 +87,38 @@ const visualizationItems = computed(() => {
   return vis.split(/[;,]\s*/).filter(item => item.trim().length > 0)
 })
 
-// ---- методы ----
 const close = () => emit('close')
-
 const toggleBookmark = () => {
   toggle(props.theorem.id)
   isBookmarked.value = checkBookmark(props.theorem.id)
   emit('bookmark', props.theorem.id)
 }
-
-const renderTheorem = () => {
-  const canvas = canvasRef.value
-  if (!canvas) return
-  const ctx = canvas.getContext('2d')
-  const vis = mathStore.getVisualization(props.theorem.id)
-  if (vis) {
-    drawFigure(ctx, vis.type, vis.params)
-  } else {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.fillStyle = 'var(--text-muted)'
-    ctx.font = '20px Arial'
-    ctx.textAlign = 'center'
-    ctx.textBaseline = 'middle'
-    ctx.fillText('Нет визуализации', canvas.width / 2, canvas.height / 2)
-  }
-}
-
-const renderMulti = () => {
-  const items = imageItems.value
-  if (!items.length) return
-
-  items.forEach((item, index) => {
-    const canvas = canvasRefs.value[index]
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    const img = new Image()
-    img.src = item.src
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-    }
-    img.onerror = () => {
-      ctx.fillStyle = '#ccc'
-      ctx.font = '20px Arial'
-      ctx.textAlign = 'center'
-      ctx.textBaseline = 'middle'
-      ctx.fillText('Ошибка загрузки', canvas.width / 2, canvas.height / 2)
-    }
-  })
-}
+const handleImageError = () => { imageError.value = true }
 
 onMounted(() => {
   isBookmarked.value = checkBookmark(props.theorem.id)
-  if (imageItems.value.length > 1) {
-    nextTick(() => renderMulti())
-  } else {
-    renderTheorem()
-  }
 })
-
 watch(() => props.theorem, () => {
   isBookmarked.value = checkBookmark(props.theorem.id)
-  if (imageItems.value.length > 1) {
-    nextTick(() => renderMulti())
-  } else {
-    renderTheorem()
-  }
+  imageError.value = false
 })
 </script>
 
 <style scoped>
+/* Стили остаются те же */
+.modal-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+.no-image {
+  color: var(--text-muted);
+  font-size: 18px;
+  padding: 40px;
+  text-align: center;
+}
 /* ---- overlay ---- */
 .modal-overlay {
   position: fixed;

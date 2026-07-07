@@ -2,12 +2,12 @@
   <div class="theory-view">
     <TheoryFilters
       v-model:search="searchQuery"
-      v-model:subject="selectedSubject"
-      v-model:section="selectedSection"
+      v-model:subject="currentSubject"
+      v-model:section="currentSection"
       @filter-change="applyFilters"
       @sort-change="applySort"
     />
-    
+
     <div v-if="store.isLoading" class="loading-state">
       <span>⏳ Загрузка...</span>
     </div>
@@ -38,6 +38,8 @@
     <TheoryModal
       v-if="selectedTheorem"
       :theorem="selectedTheorem"
+      :subject="currentSubject"
+      :section="currentSection"
       @close="closeModal"
       @bookmark="toggleBookmark"
     />
@@ -47,51 +49,46 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useAppStore } from '@core/composables/useAppStore'
-import { useMathStore } from '../store'
+import { useSubjectStore } from '@core/store/useSubjectStore'
 import { useBookmarks } from '@core/composables/useBookmarks'
 import TheoryFilters from './TheoryFilters.vue'
 import TheoryCard from './TheoryCard.vue'
 import TheoryModal from './TheoryModal.vue'
 
 const appStore = useAppStore()
-const store = useMathStore()
+const store = useSubjectStore()
 const { toggle: toggleBookmark } = useBookmarks()
 
 const searchQuery = ref('')
-const filters = ref({ level: null, type: null, tag: null })
+const filters = ref({ level: null, type: null })
 const sortKey = ref('id')
 const sortOrder = ref('asc')
 const currentPage = ref(1)
 const pageSize = 20
 const selectedTheorem = ref(null)
 
-const selectedSubject = computed({
+const currentSubject = computed({
   get: () => appStore.selectedSubject,
   set: (val) => { appStore.selectedSubject = val }
 })
 
-const selectedSection = computed({
+const currentSection = computed({
   get: () => appStore.selectedSection,
   set: (val) => { appStore.selectedSection = val }
 })
 
 const loadData = async () => {
-  await store.loadGeometry()
-  await store.loadAlgebra()
+  await store.loadTheory(currentSubject.value, currentSection.value)
 }
 
 const currentTheorems = computed(() => {
-  if (selectedSubject.value === 'math') {
-    return store.getCurrentTheorems(selectedSection.value)
-  }
-  return []
+  return store.getTheorems(currentSubject.value, currentSection.value)
 })
 
-// ---- фильтрация и сортировка (без hiddenIds) ----
+// ---- фильтрация, сортировка, пагинация ----
 const filteredTheorems = computed(() => {
   let list = [...currentTheorems.value]
-  
-  // Поиск
+
   if (searchQuery.value) {
     const q = searchQuery.value.toLowerCase()
     list = list.filter(t =>
@@ -100,23 +97,15 @@ const filteredTheorems = computed(() => {
       t.id.toLowerCase().includes(q)
     )
   }
-  
-  // Фильтр по уровню
+
   if (filters.value.level) {
     list = list.filter(t => t.level === filters.value.level)
   }
-  
-  // Фильтр по типу
+
   if (filters.value.type) {
     list = list.filter(t => t.type === filters.value.type)
   }
-  
-  // Фильтр по тегу
-  if (filters.value.tag) {
-    list = list.filter(t => t.tags && t.tags.includes(filters.value.tag))
-  }
-  
-  // Сортировка
+
   list.sort((a, b) => {
     let valA = a[sortKey.value]
     let valB = b[sortKey.value]
@@ -126,7 +115,7 @@ const filteredTheorems = computed(() => {
     if (valA > valB) return sortOrder.value === 'asc' ? 1 : -1
     return 0
   })
-  
+
   return list
 })
 
@@ -149,17 +138,15 @@ const prevPage = () => { if (currentPage.value > 1) currentPage.value-- }
 const nextPage = () => { if (currentPage.value < totalPages.value) currentPage.value++ }
 const openModal = (th) => { selectedTheorem.value = th }
 const closeModal = () => { selectedTheorem.value = null }
-const retryLoad = () => { store.loadAll() }
+const retryLoad = () => { loadData() }
 
-// Сброс страницы при смене раздела
-watch([selectedSubject, selectedSection], () => {
+watch([currentSubject, currentSection], () => {
   currentPage.value = 1
+  loadData()
 })
 
-// Загрузка данных
-onMounted(async () => {
-  await store.loadAll()
-  await store.loadAlgebra()
+onMounted(() => {
+  loadData()
 })
 </script>
 
@@ -170,23 +157,18 @@ onMounted(async () => {
   overflow-y: auto;
   background: var(--bg-primary);
 }
-
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
-
-.loading-state,
-.error-state,
-.empty-state {
+.loading-state, .error-state, .empty-state {
   text-align: center;
   padding: 60px 0;
   color: var(--text-muted);
   font-size: 18px;
 }
-
 .error-state button {
   margin-top: 12px;
   padding: 8px 20px;
@@ -196,7 +178,6 @@ onMounted(async () => {
   border-radius: var(--radius-md);
   cursor: pointer;
 }
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -204,7 +185,6 @@ onMounted(async () => {
   gap: 16px;
   margin-top: 24px;
 }
-
 .pagination button {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -214,16 +194,13 @@ onMounted(async () => {
   cursor: pointer;
   transition: 0.2s;
 }
-
 .pagination button:hover:not(:disabled) {
   background: var(--bg-hover);
 }
-
 .pagination button:disabled {
   opacity: 0.4;
   cursor: default;
 }
-
 .pagination span {
   color: var(--text-secondary);
 }
