@@ -1,0 +1,40 @@
+{
+  "th_162": {
+    "type": "similarity",
+    "params": {
+      "homothety": true,
+      "highlight": ["homothety"]
+    }
+  },
+  "th_165": {
+    "type": "polygon",
+    "params": {
+      "points": [[120, 180], [280, 180], [340, 100], [200, 40], [60, 100]],
+      "labels": ["A₁", "A₂", "A₃", "A₄", "A₅"],
+      "show_diagonals": true,
+      "diagonals_from": 0,
+      "highlight": ["triangulation"]
+    }
+  },
+  "th_187": {
+    "type": "gmt",
+    "params": {
+      "show_locus": true,
+      "highlight": ["locus"]
+    }
+  },
+  "th_190": {
+    "type": "similarity",
+    "params": {
+      "show_area_ratio": true,
+      "highlight": ["area_ratio"]
+    }
+  },
+  "th_196": {
+    "type": "polygon",
+    "params": {
+      "show_regular_polygons": true,
+      "highlight": ["regular"]
+    }
+  }
+}

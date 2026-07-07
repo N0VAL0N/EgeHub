@@ -1,0 +1,71 @@
+{
+  "th_106": {
+    "type": "image",
+    "params": {
+      "images": [
+        "/data/math/geometry/images/th_106_plane.png",
+        "/data/math/geometry/images/th_106_space.png"
+      ],
+      "captions": [
+        "Система координат в пространстве",
+        "Координаты в пространстве"
+      ],
+      "imageWidths": [500, 500],
+      "imageHeights": [350, 350]
+    }
+},
+  "th_107": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_107_formula.png",
+      "/data/math/geometry/images/th_107_graph.png"
+    ],
+    "captions": [
+      "Формула расстояния между двумя точками",
+      "Расстояние на координатной плоскости"
+    ],
+    "imageWidths": [900, 500],
+      "imageHeights": [200, 350]
+  }
+},
+  "th_139": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_139_distance.png",
+      "/data/math/geometry/images/th_139_equation.png"
+    ],
+    "captions": [
+      "Расстояние от точки M до центра C: MC = √((x−x₀)² + (y−y₀)²)",
+      "Уравнение окружности: (x−x₀)² + (y−y₀)² = r²"
+    ],
+    "imageWidths": [800, 2000],
+      "imageHeights": [800, 500]
+  }
+},
+  "th_235": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_235.png",
+    "canvasWidth": 500,
+    "canvasHeight": 400
+  }
+},
+"th_236": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_236.png",
+    "canvasWidth": 500,
+    "canvasHeight": 400
+  }
+},
+"th_237": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_237.png",
+    "canvasWidth": 500,
+    "canvasHeight": 400
+  }
+}
+}

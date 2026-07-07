@@ -1,0 +1,150 @@
+{
+  "th_072": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_072_case1.png",
+      "/data/math/geometry/images/th_072_case2.png",
+      "/data/math/geometry/images/th_072_case3.png",
+      "/data/math/geometry/images/th_072_criterion.png",
+      "/data/math/geometry/images/th_072_theorem.png"
+    ],
+    "captions": [
+      "Случай 1: прямая лежит в плоскости (a ⊂ α)",
+      "Случай 2: прямая пересекает плоскость (a ∩ α = E)",
+      "Случай 3: прямая параллельна плоскости (a ∥ α)",
+      "Признак: если a ∥ b и b ⊂ α, то a ∥ α",
+      "Теорема: если a ∥ β, α ∩ β = m, то a ∥ m"
+    ],
+    "imageWidths": [800, 800, 800, 800, 800],
+      "imageHeights": [350, 350, 350, 350, 350]
+  }
+},
+  "th_074": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_074_def.png",
+      "/data/math/geometry/images/th_074_parallel.png",
+      "/data/math/geometry/images/th_074_two_perp.png"
+    ],
+    "captions": [
+      "Определение: a ⟂ α",
+      "Если a ∥ b и a ⟂ α, то b ⟂ α",
+      "Если a ⟂ α и b ⟂ α, то a ∥ b"
+    ],
+    "canvasWidth": 800,
+    "canvasHeight": 250
+  }
+},
+  "th_075": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_075_direct.png",
+      "/data/math/geometry/images/th_075_converse.png"
+    ],
+    "captions": [
+      "Теорема: если a₁ ⊥ m, то a ⊥ m",
+      "Обратная теорема: если a ⊥ m, то a₁ ⊥ m"
+    ],
+    "imageWidths": [800, 800],
+      "imageHeights": [500, 500]
+  }
+},
+  "th_077": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_077_def.png",
+      "/data/math/geometry/images/th_077_criterion.png",
+      "/data/math/geometry/images/th_077_corollary.png"
+    ],
+    "captions": [
+      "Определение: α ⟂ β (угол между плоскостями = 90°)",
+      "Признак: если a ⊂ α и a ⊥ β, то α ⟂ β",
+      "Следствие: если γ ⊥ l (линии пересечения α и β), то γ ⟂ α и γ ⟂ β"
+    ],
+    "imageWidths": [1000, 1000, 1000],
+      "imageHeights": [500, 500, 500]
+  }
+},
+  "th_109": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_109_point.png",
+      "/data/math/geometry/images/th_109_segments.png",
+      "/data/math/geometry/images/th_109_parallel_perp.png",
+      "/data/math/geometry/images/th_109_special_1.png",
+      "/data/math/geometry/images/th_109_special_2.png",
+      "/data/math/geometry/images/th_109_special_3.png"
+    ],
+    "captions": [
+      "Уравнение через точку: a(x−x₀) + b(y−y₀) + c(z−z₀) = 0",
+      "Уравнение в отрезках: x/A + y/B + z/C = 1",
+      "Условия параллельности и перпендикулярности",
+      "Частныи случаи 1:",
+      "Частный случай 2:",
+      "Частныи случаи 3:"
+    ],
+    "imageWidths": [300, 300, 800, 1200, 1200, 1400],
+    "imageHeights": [300, 300, 500, 700, 600, 1200]
+  }
+},
+  "th_110": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_110.png",
+    "canvasWidth": 500,
+    "canvasHeight": 200
+  }
+},
+  "th_142": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_142_def.png",
+      "/data/math/geometry/images/th_142_criterion.png"
+    ],
+    "captions": [
+      "Определение: α ∥ β (плоскости не имеют общих точек)",
+      "Признак: a ∥ β, b ∥ β, a ∩ b = O ⇒ α ∥ β"
+    ],
+    "canvasWidth": 500,
+    "canvasHeight": 350
+  }
+},
+  "th_203": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_203.png"
+  }
+},
+  "th_210": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_210.png",
+    "canvasWidth": 500,
+    "canvasHeight": 400
+  }
+},
+  "th_069": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_069.png"
+    }
+  },
+  "th_070": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_070.png"
+    }
+  },
+  "th_071": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_071.png"
+    }
+  }
+}

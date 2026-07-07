@@ -1,0 +1,73 @@
+{
+  "th_091": {
+    "type": "sphere",
+    "params": {
+      "center": [200, 150],
+      "radius": 100,
+      "show_center": true,
+      "show_radius": true,
+      "highlight": ["sphere"]
+    }
+  },
+  "th_092": {
+    "type": "sphere",
+    "params": {
+      "center": [200, 150],
+      "radius": 100,
+      "show_center": true,
+      "show_radius": true,
+      "show_area": true,
+      "highlight": ["area"]
+    }
+  },
+  "th_100": {
+    "type": "sphere",
+    "params": {
+      "center": [200, 150],
+      "radius": 100,
+      "show_center": true,
+      "show_radius": true,
+      "show_volume": true,
+      "highlight": ["volume"]
+    }
+  },
+  "th_101": {
+    "type": "sphere",
+    "params": {
+      "center": [200, 150],
+      "radius": 100,
+      "show_segment": true,
+      "show_height": true,
+      "highlight": ["spherical_segment"]
+    }
+  },
+  "th_154": {
+    "type": "sphere",
+    "params": {
+      "center": [200, 150],
+      "radius": 100,
+      "show_layer": true,
+      "highlight": ["spherical_layer"]
+    }
+  },
+  "th_155": {
+    "type": "sphere",
+    "params": {
+      "center": [200, 150],
+      "radius": 100,
+      "show_sector": true,
+      "highlight": ["spherical_sector"]
+    }
+  },
+  "th_185": {
+    "type": "sphere",
+    "params": {
+      "center": [200, 150],
+      "radius": 100,
+      "show_tangent_plane": true,
+      "show_center": true,
+      "show_radius": true,
+      "highlight": ["tangent_plane", "radius_perpendicular"]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "th_073": {
+    "type": "skew",
+    "params": {
+      "points": [[120, 200], [280, 200]],
+      "labels": ["a", "b"],
+      "show_plane": true,
+      "highlight": ["skew"]
+    }
+  },
+  "th_212": {
+    "type": "skew",
+    "params": {
+      "points": [[120, 200], [280, 200]],
+      "labels": ["a", "b"],
+      "show_common_perpendicular": true,
+      "show_plane": true,
+      "highlight": ["skew_distance"]
+    }
+  }
+}

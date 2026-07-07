@@ -1,0 +1,163 @@
+{
+ "th_102": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_102.png"
+  }
+},
+  "th_103": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_103.png"
+  }
+},
+"th_104": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_104.png"
+  }
+},
+"th_105": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_105.png"
+  }
+},
+  "th_108": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_108_def.png",
+      "/data/math/geometry/images/th_108_props.png",
+      "/data/math/geometry/images/th_108_coord.png"
+    ],
+    "imageWidths": [900, 900, 1300],
+    "imageHeights": [300, 300, 800],
+    "captions": [
+      "Определение: (a₁, a₂) = |a₁|·|a₂|·cos φ",
+      "Свойства скалярного произведения",
+      "Координатная формула: (a₁, a₂) = x₁x₂ + y₁y₂ + z₁z₂"
+    ]
+  }
+},
+  "th_136": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_136.png",
+      "canvasWidth": 600,
+      "canvasHeight": 400
+    }
+  },
+  "th_225": {
+    "type": "image",
+    "params": {
+      "images": [
+        "/data/math/geometry/images/th_225_sum.png",
+        "/data/math/geometry/images/th_225_diff.png"
+      ],
+      "imageWidths": [455, 455],
+      "imageHeights": [155, 155],
+      "captions": [
+        "Сумма векторов: (x₁+x₂, y₁+y₂)",
+        "Разность векторов: (x₁−x₂, y₁−y₂)"
+      ]
+    }
+  },
+  "th_226": {
+    "type": "image",
+    "params": {
+      "images": [
+        "/data/math/geometry/images/th_226_mult.png",
+        "/data/math/geometry/images/th_226_radius.png"
+      ],
+      "imageWidths": [587, 400],
+      "imageHeights": [268, 300],
+      "captions": [
+        "",
+        "Вектор OA называют радиус-вектором"
+      ]
+    }
+  },
+  "th_227": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_227_example1.png",
+      "/data/math/geometry/images/th_227_example2.png"
+    ],
+    "imageWidths": [572, 400],
+    "imageHeights": [178, 300],
+    "captions": ["", ""]
+  }
+},
+  "th_141": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_141.png",
+    "canvasWidth": 500,
+    "canvasHeight": 400
+  }
+},
+  "th_202": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_202_lemma.png",
+    "canvasWidth": 500,
+    "canvasHeight": 350
+  }
+},
+  "th_229": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_229.png",
+    "canvasWidth": 1200,
+    "canvasHeight": 670
+  }
+},
+"th_230": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_230.png",
+    "canvasWidth": 1200,
+    "canvasHeight": 400
+  }
+},
+"th_231": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_231.png",
+      "/data/math/geometry/images/th_231_im1.png",
+      "/data/math/geometry/images/th_231_im2.png"
+    ],
+    "imageWidths": [1116, 500, 500],
+    "imageHeights": [454, 200, 200],
+    "captions": ["", "", ""]
+  }
+},
+"th_232": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_232_triangle.png",
+      "/data/math/geometry/images/th_232_parallelogram.png",
+      "/data/math/geometry/images/th_232_broken.png"
+    ],
+    "captions": [
+      "Правило треугольника: a + b = c",
+      "Правило параллелограмма: a + b = c",
+      "Правило ломаной: A₁A₂ + ... + Aₙ₋₁Aₙ = A₁Aₙ"
+    ],
+    "canvasWidth": 400,
+    "canvasHeight": 300
+  }
+},
+"th_233": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_233.png",
+    "canvasWidth": 500,
+    "canvasHeight": 400
+  }
+}
+}

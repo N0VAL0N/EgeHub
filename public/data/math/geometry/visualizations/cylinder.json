@@ -1,0 +1,35 @@
+{
+  "th_087": {
+    "type": "cylinder",
+    "params": {
+      "center": [200, 150],
+      "radius": 80,
+      "height": 120,
+      "show_axis": true,
+      "show_radius": true,
+      "show_height": true,
+      "show_centers": true,
+      "highlight": ["cylinder"]
+    }
+  },
+  "th_088": {
+    "type": "cylinder",
+    "params": {
+      "center": [200, 150],
+      "radius": 80,
+      "height": 120,
+      "show_lateral_area": true,
+      "highlight": ["lateral_area"]
+    }
+  },
+  "th_095": {
+    "type": "cylinder",
+    "params": {
+      "center": [200, 150],
+      "radius": 80,
+      "height": 120,
+      "show_volume": true,
+      "highlight": ["volume"]
+    }
+  }
+}

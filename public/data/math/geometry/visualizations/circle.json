@@ -1,0 +1,99 @@
+{
+  "th_027": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_027.png"
+    }
+  },
+  "th_029": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_029.png"
+    }
+  },
+  "th_031": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_031.png"
+    }
+  },
+  "th_047": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_047.png"
+    }
+  },
+  "th_239": {
+    "type": "image",
+    "params": {
+      "images": [
+        "/data/math/geometry/images/th_239_two_secants.png",
+        "/data/math/geometry/images/th_239_tangent_secant.png",
+        "/data/math/geometry/images/th_239_chords.png"
+      ],
+      "captions": [
+        "Две секущие: MA · MB = MC · MD",
+        "Касательная и секущая: MK² = MA · MB",
+        "Две хорды: AS · SB = CS · SD"
+      ],
+      "canvasWidth": 500,
+      "canvasHeight": 350
+    }
+  },
+  "th_172": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_172.png",
+      "canvasWidth": 500,
+      "canvasHeight": 400
+    }
+  },
+  "th_175": {
+    "type": "image",
+    "params": {
+      "images": [
+        "/data/math/geometry/images/th_175_gmt.png",
+        "/data/math/geometry/images/th_175_theorem1.png",
+        "/data/math/geometry/images/th_175_theorem2.png"
+      ],
+      "captions": [
+        "Утверждение 2: ГМТ — дуги, стягиваемые хордой AB",
+        "Теорема 1: ∠A + ∠C = 180° ⇔ четырёхугольник вписанный",
+        "Теорема 2: ∠ABD = ∠ACD ⇔ четырёхугольник вписанный"
+      ],
+      "imageWidths": [800, 800, 800],
+      "imageHeights": [800, 500, 500]
+    }
+  },
+  "th_191": {
+    "type": "image",
+    "params": {
+      "images": [
+        "/data/math/geometry/images/th_191_def_ext.png",
+        "/data/math/geometry/images/th_191_def_int.png"
+      ],
+      "captions": [
+        "Внешнее касание: центры по разные стороны от касательной",
+        "Внутреннее касание: центры по одну сторону от касательной"
+      ],
+      "imageWidths": [400, 400],
+      "imageHeights": [400, 400]
+    }
+  },
+  "th_192": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_192.png",
+      "imageWidths": [1200],
+      "imageHeights": [400]
+    }
+  },
+  "th_197": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_197.png",
+      "canvasWidth": 500,
+      "canvasHeight": 400
+    }
+  }
+}

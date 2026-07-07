@@ -1,0 +1,62 @@
+{
+  "th_032": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_032.png"
+    }
+  },
+  "th_033": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_033.png"
+    }
+  },
+  "th_034": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_034.png"
+    }
+  },
+  "th_042": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_042.png"
+    }
+  },
+  "th_035": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_035.png"
+    }
+  },
+  "th_045": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_045.png"
+    }
+  },
+  "th_135": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_135.png"
+    }
+  },
+  "th_065": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_065.png"
+  }
+},
+"th_066": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_066.png"
+  }
+},
+"th_068": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_068.png"
+  }
+}
+}

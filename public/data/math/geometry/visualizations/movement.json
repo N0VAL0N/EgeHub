@@ -1,0 +1,91 @@
+{
+  "th_111": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_111.png",
+      "canvasWidth": 500,
+      "canvasHeight": 350
+    }
+  },
+  "th_112": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_112.png",
+    "canvasWidth": 800,
+    "canvasHeight": 400
+  }
+},
+  "th_113": {
+    "type": "movement",
+    "params": {
+      "points": [[100, 150], [250, 100]],
+      "symmetry": "axial",
+      "highlight": ["axial_symmetry"]
+    }
+  },
+  "th_114": {
+    "type": "movement",
+    "params": {
+      "points": [[100, 150], [250, 100]],
+      "symmetry": "mirror",
+      "highlight": ["mirror_symmetry"]
+    }
+  },
+  "th_115": {
+  "type": "image",
+  "params": {
+    "image":
+      "/data/math/geometry/images/th_115.png",
+    "canvasWidth": 500,
+    "canvasHeight": 350
+  }
+},
+  "th_156": {
+    "type": "movement",
+    "params": {
+      "points": [[100, 150], [250, 100]],
+      "show_properties": true,
+      "highlight": ["movement_properties"]
+    }
+  },
+  "th_157": {
+    "type": "movement",
+    "params": {
+      "points": [[100, 150], [250, 100]],
+      "translation": true,
+      "highlight": ["translation_properties"]
+    }
+  },
+  "th_158": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_158.png",
+    "canvasWidth": 900,
+    "canvasHeight": 400
+  }
+},
+  "th_159": {
+    "type": "movement",
+    "params": {
+      "points": [[100, 150], [250, 100]],
+      "symmetry": "axial",
+      "highlight": ["axial_properties"]
+    }
+  },
+  "th_160": {
+    "type": "movement",
+    "params": {
+      "points": [[100, 150], [250, 100]],
+      "symmetry": "central",
+      "highlight": ["central_properties"]
+    }
+  },
+  "th_161": {
+    "type": "movement",
+    "params": {
+      "points": [[100, 150], [250, 100]],
+      "composition": true,
+      "highlight": ["composition"]
+    }
+  }
+}

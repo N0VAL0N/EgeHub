@@ -1,0 +1,40 @@
+:root {
+  /* Светлая тема (по умолчанию) */
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e2e8f0;
+  --bg-hover: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #94a3b8;
+  --border-color: #cbd5e1;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+}
+
+/* Тёмная тема (включается через атрибут) */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --bg-hover: #475569;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+}
+
+/* Общие переменные */
+:root {
+  --sidebar-width: 220px;
+  --header-height: 64px;
+  --footer-height: 48px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}

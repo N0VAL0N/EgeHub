@@ -1,0 +1,46 @@
+{
+  "th_089": {
+    "type": "cone",
+    "params": {
+      "center": [200, 150],
+      "radius": 80,
+      "height": 120,
+      "show_axis": true,
+      "show_radius": true,
+      "show_height": true,
+      "show_vertex": true,
+      "show_generator": true,
+      "highlight": ["cone"]
+    }
+  },
+  "th_090": {
+    "type": "cone",
+    "params": {
+      "center": [200, 150],
+      "radius": 80,
+      "height": 120,
+      "show_lateral_area": true,
+      "highlight": ["lateral_area"]
+    }
+  },
+  "th_098": {
+    "type": "cone",
+    "params": {
+      "center": [200, 150],
+      "radius": 80,
+      "height": 120,
+      "show_volume": true,
+      "highlight": ["volume"]
+    }
+  },
+  "th_153": {
+    "type": "cone",
+    "params": {
+      "center": [200, 150],
+      "radius": 80,
+      "height": 120,
+      "frustum": true,
+      "highlight": ["frustum_formulas"]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "th_080": {
+    "type": "image",
+    "params": {
+      "image": "/data/math/geometry/images/th_080.png"
+    }
+  },
+  "th_083": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_083.png"
+  }
+},
+"th_084": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_084.png"
+  }
+},
+"th_086": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_086.png"
+  }
+},
+  "th_082": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_082.png"
+  }
+},
+"th_094": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_094.png"
+  }
+},
+"th_096": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_096.png"
+  }
+},
+  "th_199": {
+  "type": "image",
+  "params": {
+    "images": [
+      "/data/math/geometry/images/th_199_sphere_cube.png",
+      "/data/math/geometry/images/th_199_cylinder_box.png",
+      "/data/math/geometry/images/th_199_prism_cylinder.png",
+      "/data/math/geometry/images/th_199_cone_sphere.png",
+      "/data/math/geometry/images/th_199_cone_cylinder.png",
+      "/data/math/geometry/images/th_199_sphere_cylinder.png"
+    ],
+    "captions": [
+      "Шар в кубе: R = a/2",
+      "Цилиндр в коробке: r = a/2, h = b",
+      "Призма в цилиндре",
+      "Конус в сфере",
+      "Конус в цилиндре",
+      "Сфера в цилиндре: R = r, h = 2R"
+    ],
+    "canvasWidth": 450,
+    "canvasHeight": 300
+  }
+},
+  "th_078": {
+  "type": "image",
+  "params": {
+    "image": "/data/math/geometry/images/th_078.png"
+  }
+}
+}

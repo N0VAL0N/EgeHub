@@ -1,0 +1,17 @@
+{
+  "th_076": {
+    "type": "dihedral",
+    "params": {
+      "points": [[100, 150], [300, 150]],
+      "highlight": ["dihedral_angle"]
+    }
+  },
+  "th_149": {
+  "type": "dihedral",
+  "params": {
+    "points": [[100, 150], [300, 150]],
+    "show_linear_angles": true,
+    "highlight": ["equal_linear_angles"]
+  }
+}
+}
