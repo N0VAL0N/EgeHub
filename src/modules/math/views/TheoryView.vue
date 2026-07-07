@@ -2,7 +2,6 @@
   <div class="theory-view">
     <TheoryFilters
       v-model:search="searchQuery"
-      v-model:subject="currentSubject"
       v-model:section="currentSection"
       @filter-change="applyFilters"
       @sort-change="applySort"
@@ -38,7 +37,7 @@
     <TheoryModal
       v-if="selectedTheorem"
       :theorem="selectedTheorem"
-      :subject="currentSubject"
+      subject="math"
       :section="currentSection"
       @close="closeModal"
       @bookmark="toggleBookmark"
@@ -48,14 +47,14 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
-import { useAppStore } from '@core/composables/useAppStore'
+import { useRoute } from 'vue-router'
 import { useSubjectStore } from '@core/store/useSubjectStore'
 import { useBookmarks } from '@core/composables/useBookmarks'
 import TheoryFilters from './TheoryFilters.vue'
 import TheoryCard from './TheoryCard.vue'
 import TheoryModal from './TheoryModal.vue'
 
-const appStore = useAppStore()
+const route = useRoute()
 const store = useSubjectStore()
 const { toggle: toggleBookmark } = useBookmarks()
 
@@ -67,25 +66,19 @@ const currentPage = ref(1)
 const pageSize = 20
 const selectedTheorem = ref(null)
 
-const currentSubject = computed({
-  get: () => appStore.selectedSubject,
-  set: (val) => { appStore.selectedSubject = val }
-})
+// Берём раздел из параметров роута, по умолчанию 'geometry'
+const currentSection = computed(() => route.params.section || 'geometry')
 
-const currentSection = computed({
-  get: () => appStore.selectedSection,
-  set: (val) => { appStore.selectedSection = val }
-})
-
+// Загружаем данные для математики + текущего раздела
 const loadData = async () => {
-  await store.loadTheory(currentSubject.value, currentSection.value)
+  await store.loadTheory('math', currentSection.value)
 }
 
 const currentTheorems = computed(() => {
-  return store.getTheorems(currentSubject.value, currentSection.value)
+  return store.getTheorems('math', currentSection.value)
 })
 
-// ---- фильтрация, сортировка, пагинация ----
+// ---- фильтрация, сортировка, пагинация (без тегов) ----
 const filteredTheorems = computed(() => {
   let list = [...currentTheorems.value]
 
@@ -140,7 +133,7 @@ const openModal = (th) => { selectedTheorem.value = th }
 const closeModal = () => { selectedTheorem.value = null }
 const retryLoad = () => { loadData() }
 
-watch([currentSubject, currentSection], () => {
+watch(() => route.params.section, () => {
   currentPage.value = 1
   loadData()
 })
